@@ -4,9 +4,14 @@ print("~~~ Welcome! ~~~\n\n It's time to choose your weapon!\n Select Rock, Pape
 
 print()
 
+input("Press Enter to START")
+
+print()
+
+player1_score = 0
+player2_score = 0
+
 while True:
-  input("Press Enter to START")
-  print()
 
   player1 = input("Player 1, it's time to chose your weapon: ")
   player1= player1.upper()
@@ -25,8 +30,10 @@ while True:
       print("Draw")
     elif player2 == "P":
       print("Player 2 Wins!")
+      player2_score += 1
     elif player2 == "S":
       print("Player 1 Wins!")
+      player1_score += 1
     else:
       print("Player 2: Invalid move")
   elif player1 == "P":
@@ -34,8 +41,10 @@ while True:
       print("Draw")
     elif player2 == "R":
       print("Player 1 Wins!")
+      player1_score += 1
     elif player2 == "S":
       print("Player 2 Wins!")
+      player2_score += 1
     else:
       print("Player 2: Invalid input")
   elif player1 == "S":
@@ -43,8 +52,10 @@ while True:
       print("Draw!")
     elif player2 == "P":
       print("Player 1 Wins!")
+      player1_score += 1
     elif player2 == "R":
       print("Player 2 Wins!")
+      player2_score += 1
     else:
       print("Player 2: Invalid strike")
   else:
@@ -52,7 +63,11 @@ while True:
 
   print()
 
-  play_again = input ("Play again? (y/n): ")
-  if play_again.lower() != "y":
-    break
+  print(f'Score > Player 1 > {player1_score} | Player 2 > {player2_score}')
+
   print()
+
+  if player1_score == 5 or player2_score == 5:
+    print("Congratulations! We have a winner!")
+    exit()
+  
