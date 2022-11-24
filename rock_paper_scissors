@@ -1,0 +1,58 @@
+from getpass import getpass as input
+
+print("~~~ Welcome! ~~~\n\n It's time to choose your weapon!\n Select Rock, Paper, or Scissors by typing R, P, or S.\n Good luck!")
+
+print()
+
+while True:
+  input("Press Enter to START")
+  print()
+
+  player1 = input("Player 1, it's time to chose your weapon: ")
+  player1= player1.upper()
+  print("Interesting choice!")
+
+  print()
+
+  player2 = input("Player 2, it's your time to shine: ")
+  player2 = player2.upper()
+  print("Could have done better!")
+
+  print()
+
+  if player1 == "R":
+    if player2 == "R":
+      print("Draw")
+    elif player2 == "P":
+      print("Player 2 Wins!")
+    elif player2 == "S":
+      print("Player 1 Wins!")
+    else:
+      print("Player 2: Invalid move")
+  elif player1 == "P":
+    if player2 == "P":
+      print("Draw")
+    elif player2 == "R":
+      print("Player 1 Wins!")
+    elif player2 == "S":
+      print("Player 2 Wins!")
+    else:
+      print("Player 2: Invalid input")
+  elif player1 == "S":
+    if player2 == "S":
+      print("Draw!")
+    elif player2 == "P":
+      print("Player 1 Wins!")
+    elif player2 == "R":
+      print("Player 2 Wins!")
+    else:
+      print("Player 2: Invalid strike")
+  else:
+    print("Player 1: Invalid move")
+
+  print()
+
+  play_again = input ("Play again? (y/n): ")
+  if play_again.lower() != "y":
+    break
+  print()
