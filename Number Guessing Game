@@ -1,0 +1,34 @@
+import random
+
+print("~~~ Welcome! Let's play: Guess the number! ~~~")
+print()
+
+count = 1
+number = random.randint(0, 2)
+
+
+while True:
+
+  guess = int(input("Guess the number: "))
+
+  if guess == number:
+    print("Congratulations!")
+    break
+
+  elif guess < number:
+    print("Too low")
+    count += 1
+    continue
+
+  elif guess > number:
+    print("Too high")
+    count += 1
+    continue
+
+  if guess < 0:
+    exit()
+
+  else:
+    print("That's not an option.")
+
+print(f'Number of guesses: {count}')
