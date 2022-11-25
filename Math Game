@@ -1,0 +1,22 @@
+print("Math Game!")
+print()
+number = 1
+points = 0
+choice = int(input("Choose your number: "))
+print()
+
+for i in range(10):
+
+  i = int(input(f'{number} X {choice} = '))
+  
+  result = number*choice
+  
+  number += 1
+  if i == result:
+    print("Correct!")
+    points += 1
+  else:
+    print(f'Nope. The answer is {result}')
+    continue
+
+print(f'Score: {points} out of 10')
