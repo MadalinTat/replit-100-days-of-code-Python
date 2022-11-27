@@ -1,0 +1,50 @@
+import os, time, random
+
+
+def character():
+
+  character_name = input("Name your character: ").upper()
+  print()
+  character_type = input("Character Type (Human, Elf, Mage, Orc, Banshee): ").upper()
+  print()
+  the_character = print("📜" +" "+character_name + " " + "THE" + " " + character_type)
+  return the_character
+
+def rollDice(sides):
+  dice_sides = random.randint(0, sides)
+  return dice_sides
+
+def health():
+  six_sided_roll = rollDice(6)
+  twelve_sided_roll = rollDice(12)
+  health = int(six_sided_roll*twelve_sided_roll / 2 + 10)
+  return health
+
+def strength():
+  six_sided_roll = rollDice(6)
+  twelve_sided_roll = rollDice(12)
+  strength = int(six_sided_roll*twelve_sided_roll /2 + 12)
+  return strength
+
+character_creation = "y"
+
+while character_creation == "y":
+  os.system("clear")
+  print("⚔️ Character Builder ⚔️")
+  print()
+  time.sleep(1)
+  print("It's time to create a character!")
+  print()
+  time.sleep(1)
+  character()
+  time.sleep(1)
+  print("❤️ HEALTH:", health())
+  time.sleep(1)
+  print("🔥 STRENGTH:", strength())
+  print()
+  time.sleep(1)
+  to_continue = input("➕ Create more characters? y/n ")
+  if to_continue == "y":
+    continue
+  else:
+    exit()
