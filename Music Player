@@ -1,0 +1,36 @@
+from replit import audio
+import os, time
+
+def play():
+  source = audio.play_file('audio.wav')
+  source.paused = False
+  while True:
+    print()
+    stop = int(input("Press 2 to stop and go back to the menu "))
+    if stop == 2:
+      source.paused = True
+      return
+    else: 
+      continue
+  
+while True:
+  os.system("clear")
+  print("🎵 Music Player ")
+  time.sleep(1)
+  print()
+  print("Press 1 to Play")
+  time.sleep(1)
+  print()
+  print("Press 2 to Exit")
+  time.sleep(1)
+  print()
+  number = int(input())
+  if number == 1:
+    print()
+    print("Playing some proper tunes!")
+    print()
+    play()
+  elif number == 2:
+    exit()
+  else :
+    continue
